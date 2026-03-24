@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiroto Tonooka | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo-link">
+                <div class="logo">T<span class="dot">.</span>Hiroto</div>
+            </a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#experienced">Experienced</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content reveal-bottom">
+                <span class="label">Technical Operator & Event Creator</span>
+                <h1><span class="ignite-gradient">Ignite</span> the Passion.</h1>
+                <p class="hero-subtext">先人が灯した情熱に、薪を焚べ続ける</p>
+            </div>
+        </section>
+
+        <section id="about" class="reveal-left">
+            <h2 class="section-title" data-subtitle="自己紹介">About Me</h2>
+            <div class="about-flex">
+                <div class="profile-image">
+                    <img src="img/profile-face.jpg" alt="戸ノ岡 宙斗">
+                </div>
+                <div class="profile-details">
+                    <h3 class="name-ja">戸ノ岡 宙斗</h3>
+                    <p class="name-en">Hiroto Tonooka</p>
+                    <ul class="info-list">
+                        <li><strong>From</strong>:　茨城県下妻市</li>
+                        <li><strong>Age</strong>:　20 (2005.05.23)</li>
+                        <li><strong>Status</strong>:　専門学生</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="about-story reveal-bottom">
+                <p>
+                    <span class="highlight">世界大会で日本人が活躍している姿</span>を目の当たりにし、eスポーツの可能性を知りました。
+                </p>
+                <p>
+                    そこで目にした<span class="user-orange-text">選手たちの圧倒的な本気度</span>、および会場を包み込む<span class="user-orange-text">ファンの熱量</span>。
+                </p>
+                <p>
+                    その光景に深く心を打たれ、単なる観客ではなく、この熱狂を支え、作り出す側としての<span class="highlight">業界進出を志しました。</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal-right">
+            <h2 class="section-title" data-subtitle="能力">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card clickable" 
+                     data-title="vMix Engineering" 
+                     data-desc="vMixを用いた大規模イベントのライブ配信・スイッチングに対応。API連携や独自スクリプト、リプレイシステムを組み合わせた複雑な配信構成の構築を得意とします。\n\n現場では、リアルタイムでのトラブルシューティングや、複数台のカメラソース管理、高度なグラフィックス合成をワンストップで実現します。"
+                     data-images='["img/skill-vmix-1.png", "img/skill-vmix-2.jpg"]'>
+                    <div class="skill-img-container">
+                        <img src="img/skill-vmix-1.png" alt="vMix Engineering">
+                    </div>
+                    <div class="skill-info">
+                        <div class="skill-icon">01</div>
+                        <h3>vMix Engineering</h3>
+                    </div>
+                </div>
+
+                <div class="skill-card clickable" 
+                    data-title="Broadcasting" 
+                    data-desc="OBSをはじめとした各種エンコーダーの最適化。現場の通信環境や機材構成を瞬時に判断し、その場における最高画質・低遅延な視聴体験を届けるための技術支援を提供します。</br></br>配信環境の構築および設定の最適化に携わった事例をご紹介します。
+                                </br></br>〇nobi tube 様</br><a href='https://www.youtube.com/watch?v=loQjZg0XUso' target='_blank' rel='noopener noreferrer' style='color: var(--user-orange); text-decoration: underline;'>【#鉄拳8】#ノビセン『Road to EVO Japan 2026』</a>
+                                </br></br>〇tekkenchannel 様</br><a href='https://www.youtube.com/live/kEsMI2nF_1E?si=BQ7IPnAXMf0m2fSp' target='_blank' rel='noopener noreferrer' style='color: var(--user-orange); text-decoration: underline;'>プロライセンス選手大集合！2026年展望トーク＆エキシビジョンマッチ</a>
+                                </br></br>〇arcsystemworks 様</br><a href='https://www.youtube.com/live/uoUwohW68O0?si=6dcZVye_FzYZGL3Y' target='_blank' rel='noopener noreferrer' style='color: var(--user-orange); text-decoration: underline;'>【#AWT25_26】『ARC WORLD TOUR 2025-2026 FINALS』Day1 FIRST STAGE GGST部門 公式日本語配信</a>
+                                </br></br>〇tekkenchannel 様</br><a href='https://www.youtube.com/live/FCha_ATC3h0?si=E4exjnAvzkl1Aj00' target='_blank' rel='noopener noreferrer' style='color: var(--user-orange); text-decoration: underline;'>【#TWT2025/公式日本語配信】Global Finals / DAY4 (ファイナル / TOP8)</a>"
+                    data-images='["img/skill-obs-3.jpg","img/skill-obs-4.jpg","img/skill-obs-5.jpg","img/skill-obs-6.jpg"]'>
+                    <div class="skill-img-container">
+                        <img src="img/skill-obs-3.jpg" alt="Broadcasting">
+                </div>
+    <div class="skill-info">
+        <div class="skill-icon">02</div>
+        <h3>Broadcasting</h3>
+    </div>
+</div>
+
+                <div class="skill-card clickable" 
+                     data-title="Event Production" 
+                     data-desc="テクニカルディレクター（TD）および制作ディレクターとして、イベントの全体設計から当日運営までを牽引。音響・映像・進行の各セクションと密に連携し、円滑な進行とクオリティを担保します。"
+                     data-images='["img/skill-event-1.png", "img/skill-event-2.png"]'>
+                    <div class="skill-img-container">
+                        <img src="img/skill-event-1.png" alt="Event Production">
+                    </div>
+                    <div class="skill-info">
+                        <div class="skill-icon">03</div>
+                        <h3>Event Production</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2 class="section-title" data-subtitle="制作物">Works</h2>
+            <div class="works-container">
+                <div class="work-item reveal-left">
+                    <div class="work-thumb slider-container" data-images='["img/work-lol-1.png","img/work-lol-2.png"]'>
+                        <img src="img/work-lol-1.png" class="slider-img" alt="LoL System">
+                        <div class="slider-nav prev"></div>
+                        <div class="slider-nav next"></div>
+                    </div>
+                    <div class="work-info">
+                        <h3>LoL Ban/Pick System</h3>
+                        <p>vMixとGoogle Sheetsを連携させた半自動表示システム。<br>
+                        配信における多彩な表現に流用できます。</p>
+                    </div>
+                </div>
+
+                <div class="work-item reveal-right">
+                    <div class="work-thumb slider-container" data-images='["img/work-design-1.png", "img/work-design-2.png", "img/work-design-3.png"]'>
+                        <img src="img/work-design-1.png" class="slider-img" alt="Slide Design">
+                        <div class="slider-nav prev"></div>
+                        <div class="slider-nav next"></div>
+                    </div>
+                    <div class="work-info">
+                        <h3>Slide Design</h3>
+                        <p>配信テーマのトーン＆マナーを深く理解し、<br>
+                        情報の視認性とイベントのブランド価値を両立させたデザイン構成を行いました。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-container">
+                <span class="close-button">&times;</span>
+                <div class="modal-flex-wrapper">
+                    <div class="modal-text-side">
+                        <h2 id="modal-title"></h2>
+                        <div class="modal-divider"></div>
+                        <p id="modal-desc"></p>
+                    </div>
+                    <div id="modal-images" class="modal-image-side"></div>
+                </div>
+            </div>
+        </div>
+
+        <section id="experienced" class="reveal-bottom">
+            <h2 class="section-title" data-subtitle="実績">Experienced</h2>
+            <div class="exp-container">
+                <div class="exp-row">
+                    <span class="exp-date">2025.07</span>
+                    <span class="exp-title">Tekken8 The MIXUP 2025</span>
+                </div>
+                <div class="exp-row">
+                    <span class="exp-date">2025.08</span>
+                    <span class="exp-title">Tekken8 EVO 2025</span>
+                </div>
+                <div class="exp-row">
+                    <span class="exp-date">2025.08</span>
+                    <span class="exp-title">Esports World Cup 2025 鉄拳8部門</span>
+                </div>
+                <div class="exp-row">
+                    <span class="exp-date">2025.09</span>
+                    <span class="exp-title">【VALORANT】#RedBullHomeGround 2025 日本予選 メインステージ抽選会</span>
+                </div>
+                <div class="exp-row">
+                    <span class="exp-date">2025.10</span>
+                    <span class="exp-title">Tekken8 EVO France 2025</span>
+                </div>
+                <div class="exp-row">
+                    <span class="exp-date">2025.10</span>
+                    <span class="exp-title">寶船 30th Anniversary</span>
+                </div>
+                <div class="exp-row">
+                    <span class="exp-date">2025.10</span>
+                    <span class="exp-title">Tekken8 Paradise Game Battle 2025</span>
+                </div>    
+                <div class="exp-row">
+                    <span class="exp-date">2025.11</span>
+                    <span class="exp-title">Tekken8 SOOP Super Tournament 2025</span>
+                </div>     
+                <div class="exp-row">
+                    <span class="exp-date">2025.11</span>
+                    <span class="exp-title">Tekken8 TGU 2025</span>
+                </div>    
+                <div class="exp-row">
+                    <span class="exp-date">2026.01</span>
+                    <span class="exp-title">TEKKEN World Tour 2025 Global Finals</span>
+                </div>               
+            </div>
+        </section>
+
+        <section id="contact" class="reveal-bottom">
+            <div class="contact-bg-container">
+                <div class="contact-inner-wrapper">
+                    <h2 class="section-title" data-subtitle="お問い合わせ">Contact</h2>
+                    <div class="contact-content">
+                        <p>
+                            eスポーツの現場を共に作り上げる機会を、いつでも心待ちにしております。<br>
+                            技術的なご相談からお仕事のご依頼まで、どのようなことでもお気軽にお声がけください。
+                        </p>
+                        
+                        <div class="social-links">
+                            <a href="mailto:tonooka.hiroto0523@gmail.com">Mail</a>
+                            <a href="https://x.com/tebozaru" target="_blank" rel="noopener noreferrer">X</a>
+                            <a href="https://discord.com/users/747575821191086110" target="_blank" rel="noopener noreferrer">Discord</a>
+                            <a href="https://www.youtube.com/@TeBoZaRu" target="_blank" rel="noopener noreferrer">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-left, .reveal-right, .reveal-bottom').forEach(el => {
+            observer.observe(el);
+        });
+
+        const modal = document.getElementById("modal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalDesc = document.getElementById("modal-desc");
+        const modalImages = document.getElementById("modal-images");
+        const modalContainer = document.querySelector(".modal-container");
+        const modalTextSide = document.querySelector(".modal-text-side");
+        const modalImageSide = document.querySelector(".modal-image-side");
+        const closeButton = document.querySelector(".close-button");
+        const modalOverlay = document.querySelector(".modal-overlay");
+
+        document.querySelectorAll('.clickable').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.getAttribute('data-title');
+                const desc = card.getAttribute('data-desc');
+                const imagesString = card.getAttribute('data-images');
+                if(!imagesString) return;
+                
+                try {
+                    const images = JSON.parse(imagesString);
+                    modalTitle.innerText = title;
+                    modalDesc.innerHTML = desc.replace(/\\n/g, '<br>');
+                    
+                    modalImages.innerHTML = '';
+                    images.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        modalImages.appendChild(img);
+                    });
+
+                    modalContainer.scrollTop = 0;
+                    modalTextSide.scrollTop = 0;
+                    modalImageSide.scrollTop = 0;
+
+                    modal.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                } catch (e) {
+                    console.error("Failed to parse modal images:", e);
+                }
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        };
+
+        closeButton.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        document.querySelectorAll('.slider-container').forEach(container => {
+            const imagesString = container.getAttribute('data-images');
+            if (!imagesString) return;
+            const images = JSON.parse(imagesString);
+            const imgElement = container.querySelector('.slider-img');
+            const prevBtn = container.querySelector('.prev');
+            const nextBtn = container.querySelector('.next');
+            
+            if (images.length <= 1) {
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+            }
+
+            let currentIndex = 0;
+
+            const updateImage = (index) => {
+                imgElement.style.opacity = '0';
+                setTimeout(() => {
+                    imgElement.src = images[index];
+                    imgElement.style.opacity = '1';
+                }, 200);
+            };
+
+            if (images.length > 1) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                    updateImage(currentIndex);
+                });
+
+                nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                    updateImage(currentIndex);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
