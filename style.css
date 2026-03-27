@@ -10,6 +10,8 @@
     --user-orange: #ffa115;
     --border: #333333;
     --btn-gradient: linear-gradient(135deg, var(--accent-red), var(--accent-gold));
+    /* 幅を広げるための設定 */
+    --max-width: 1400px;
 }
 
 /* --- Base --- */
@@ -47,7 +49,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 
@@ -96,7 +98,7 @@ nav ul li a:hover {
 /* --- Sections --- */
 section {
     padding: 100px 40px; 
-    max-width: 1100px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 
@@ -147,7 +149,7 @@ section {
 }
 
 .hero-content {
-    max-width: 1100px;
+    max-width: var(--max-width);
     margin: 0 auto;
     width: 100%;
 }
@@ -367,7 +369,7 @@ section {
 
 .skill-card {
     flex: 1 1 320px;
-    max-width: 350px; 
+    max-width: 440px; /* 横幅拡張に合わせてカード最大幅を調整 */
     cursor: pointer;
 }
 
@@ -408,7 +410,7 @@ section {
 
 .work-item {
     width: 100%;
-    max-width: 520px;
+    max-width: 650px; /* 横幅拡張に合わせて調整 */
     transition: 0.4s ease;
 }
 
@@ -434,7 +436,7 @@ section {
     line-height: 1.7;
 }
 
-/* --- Modal Layout --- */
+/* --- Modal Layout (Large) --- */
 .modal {
     position: fixed;
     top: 0;
@@ -466,7 +468,7 @@ section {
 .modal-container {
     position: relative;
     width: 95%;
-    max-width: 1100px;
+    max-width: 1200px; /* モーダルの横幅を拡大 */
     height: 85vh;
     background: var(--card-bg);
     border-radius: 12px;
@@ -485,7 +487,7 @@ section {
 }
 
 .modal-text-side {
-    flex: 0 0 40%;
+    flex: 0 0 450px; /* テキスト側の幅を固定 */
     padding: 60px 50px;
     background: var(--card-bg);
     border-right: 1px solid var(--border);
@@ -539,13 +541,12 @@ section {
 .exp-container {
     display: flex;
     flex-direction: column;
-    gap: 0; /* 行間の隙間は padding で調整 */
+    gap: 0;
     padding-bottom: 40px;
 }
 
 .exp-row {
     display: grid;
-    /* 日付(100px) | タイトル(1fr) | 役割(250px) の3カラム構成 */
     grid-template-columns: 100px 1fr 280px; 
     align-items: center;
     gap: 20px;
@@ -555,7 +556,7 @@ section {
 }
 
 .exp-row:hover {
-    background: rgba(255, 255, 255, 0.03); /* ホバー時に軽くハイライト */
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .exp-date {
@@ -575,35 +576,11 @@ section {
 .exp-role {
     color: var(--user-orange);
     font-size: 0.85rem;
-    text-align: right; /* ポジションは右寄せで見やすく */
+    text-align: right;
     font-weight: 400;
     letter-spacing: 0.5px;
 }
 
-/* スマホ・タブレット用のレスポンシブ設定 */
-@media (max-width: 768px) {
-    .exp-row {
-        grid-template-columns: 1fr; /* 1列に並べる */
-        gap: 8px;
-        padding: 20px 0;
-    }
-
-    .exp-date {
-        font-size: 0.8rem;
-        margin-bottom: 4px;
-    }
-
-    .exp-title {
-        font-size: 0.95rem;
-    }
-
-    .exp-role {
-        text-align: left; /* スマホでは左寄せ */
-        color: var(--user-orange); /* スマホで見落とされないよう少し色を強調 */
-        font-size: 0.8rem;
-        margin-top: 5px;
-    }
-}
 /* --- Contact Section --- */
 #contact { 
     padding: 0; 
@@ -612,18 +589,18 @@ section {
 
 .contact-bg-container {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('img/contact-bg.png');
-    background-size: cover;    /* 縦横比を維持して隙間なく表示 */
-    background-position: center; /* 中央基準で拡大縮小 */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; 
     width: 100%;
-    padding: 120px 0; /* コンテナの高さを中身のコンテンツ＋余白で決める */
+    padding: 120px 0;
     display: flex;
     align-items: center;
 }
 
 .contact-inner-wrapper {
-    max-width: 1100px;
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -728,4 +705,11 @@ footer {
 
     .skills-grid { justify-content: center; }
     .skill-card { width: 100%; flex: 1 1 100%; }
+
+    .exp-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 20px 0;
+    }
+    .exp-role { text-align: left; margin-top: 5px; }
 }
