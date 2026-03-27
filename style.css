@@ -96,9 +96,14 @@ nav ul li a:hover {
 
 /* --- Sections --- */
 section {
-    padding: 100px 40px; 
+    padding: 100px 0;
+    width: 100%;
+}
+
+.section-inner {
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: 0 40px;
 }
 
 .section-title {
@@ -136,7 +141,7 @@ section {
 /* --- Hero --- */
 #hero {
     height: 80vh; 
-    max-width: 100%;
+    padding: 0;
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--border);
@@ -144,13 +149,13 @@ section {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 0 40px;
 }
 
 .hero-content {
     max-width: var(--max-width);
     margin: 0 auto;
     width: 100%;
+    padding: 0 40px;
 }
 
 .label {
@@ -339,7 +344,7 @@ section {
 .prof-stars {
     color: var(--user-orange);
     font-size: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px; /* 文字間隔を詰めて視認性を向上 */
 }
 
 .prof-bar-bg {
@@ -467,6 +472,7 @@ section {
     width: 100%;
     max-width: 650px;
     transition: 0.4s ease;
+    cursor: pointer;
 }
 
 .work-item:hover {
@@ -491,7 +497,7 @@ section {
     line-height: 1.7;
 }
 
-/* --- Modal Layout --- */
+/* --- Modal Layout (Base) --- */
 .modal {
     position: fixed;
     top: 0;
@@ -535,6 +541,18 @@ section {
 
 .modal.show .modal-container { transform: translateY(0); }
 
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: #fff;
+    z-index: 100;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* --- Skills Modal (2 Column Layout) --- */
 .modal-flex-wrapper { 
     display: flex; 
     min-height: 100%;
@@ -561,11 +579,6 @@ section {
     margin-bottom: 30px;
 }
 
-#modal-desc {
-    font-size: 0.95rem;
-    line-height: 1.8;
-}
-
 .modal-image-side {
     flex: 1;
     padding: 40px;
@@ -581,14 +594,42 @@ section {
     border-radius: 4px;
 }
 
-.close-button {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 2.5rem;
-    color: #fff;
-    z-index: 10;
-    cursor: pointer;
+/* --- Works Modal (Vertical Layout) --- */
+.works-modal-content {
+    padding: 60px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.works-modal-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.works-modal-header h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--user-orange);
+}
+
+.works-article-section {
+    margin-bottom: 60px;
+}
+
+.works-article-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+}
+
+.works-article-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    background: rgba(255,255,255,0.03);
+    padding: 25px;
+    border-left: 3px solid var(--user-orange);
 }
 
 /* --- Experienced --- */
@@ -628,10 +669,9 @@ section {
     letter-spacing: 0.5px;
 }
 
-/* --- Contact Section (左右の隙間をなくす修正) --- */
+/* --- Contact Section --- */
 #contact {
-    padding: 0;           /* セクション自体の余白をゼロにする */
-    max-width: 100%;      /* 幅の制限を解除して全幅にする */
+    padding: 0;
 }
 
 .contact-bg-container {
@@ -640,16 +680,7 @@ section {
     background-position: center;
     background-attachment: fixed; 
     width: 100%;
-    padding: 120px 0;    /* 背景の内側に上下の余白を作る */
-    display: flex;
-    align-items: center;
-}
-
-.contact-inner-wrapper {
-    max-width: var(--max-width); /* コンテンツの幅だけ制限する */
-    margin: 0 auto;
-    padding: 0 40px;
-    width: 100%;
+    padding: 120px 0;
 }
 
 .contact-content p {
@@ -718,14 +749,14 @@ footer {
     .modal-flex-wrapper { flex-direction: column; }
     .modal-text-side { flex: 0 0 auto; border-right: none; border-bottom: 1px solid var(--border); padding: 50px 30px 30px; }
     .modal-image-side { flex: 0 0 auto; padding: 20px; }
+    .works-modal-content { padding: 40px 30px; }
     .modal-container { height: 90vh; }
-    .works-container { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
     header { padding: 12px 20px; }
-    /* 他のセクションは余白を維持 */
-    section:not(#contact) { padding: 80px 20px; }
+    .section-inner { padding: 0 20px; }
+    section { padding: 80px 0; }
     
     .about-flex { flex-direction: column; text-align: center; }
     .info-list li { margin: 0 auto 12px; text-align: left; }
@@ -733,7 +764,7 @@ footer {
     #hero { background-attachment: scroll; text-align: center; }
     #hero .hero-subtext { padding-left: 0; }
     
-    .contact-bg-container { background-attachment: scroll; padding: 80px 20px; }
+    .contact-bg-container { background-attachment: scroll; padding: 80px 0; }
     .social-links { justify-content: center; }
 
     .skills-grid { justify-content: center; }
