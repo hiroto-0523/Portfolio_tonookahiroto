@@ -10,7 +10,6 @@
     --user-orange: #ffa115;
     --border: #333333;
     --btn-gradient: linear-gradient(135deg, var(--accent-red), var(--accent-gold));
-    /* 幅を広げるための設定 */
     --max-width: 1400px;
 }
 
@@ -120,7 +119,7 @@ section {
     transform: translateY(-50%);
     width: 3px;
     height: 1.1em;
-    background: linear-gradient(to bottom, var(--accent-red), var(--accent-gold));
+    background: var(--btn-gradient);
 }
 
 .section-title::after {
@@ -262,7 +261,7 @@ section {
     top: 0;
     width: 3px; 
     height: 100%;
-    background: linear-gradient(to bottom, var(--accent-red), var(--accent-gold));
+    background: var(--btn-gradient);
 }
 
 .user-orange-text {
@@ -299,44 +298,13 @@ section {
     object-fit: cover;
     transition: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-/* --- Skills Section (修正・追加) --- */
-.skill-info { 
-    padding: 24px; 
-    display: flex;
-    flex-direction: column; /* 縦並びに変更 */
-    gap: 10px;
-}
-
-.skill-main-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.skill-rating {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-left: 32px; /* アイコン(01等)の幅に合わせて微調整 */
-}
-.stars {
-    color: var(--user-orange);
-    letter-spacing: 2px;
-    font-size: 1.1rem;
-}
-
-/* 空の星(☆)の色を薄くする場合
-.stars {
-     最後の文字が☆だった場合に色を変えるなどの指定も可能ですが、
-       基本的にはそのままでもオレンジで綺麗に見えます 
-} */
 
 /* --- Proficiency Section --- */
 .proficiency-container {
     background: var(--bg-darker);
     border: 1px solid var(--border);
     padding: 40px;
-    margin-bottom: 60px; /* スキルカードとの間隔 */
+    margin-bottom: 60px;
     border-radius: 4px;
 }
 
@@ -351,12 +319,8 @@ section {
 
 .proficiency-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* PCでは2列 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px 60px;
-}
-
-.prof-item {
-    width: 100%;
 }
 
 .prof-info {
@@ -388,34 +352,8 @@ section {
 
 .prof-bar-fill {
     height: 100%;
-    background: var(--btn-gradient); /* オレンジ系のグラデーション */
+    background: var(--btn-gradient);
     border-radius: 2px;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
-    .proficiency-grid {
-        grid-template-columns: 1fr; /* スマホでは1列 */
-    }
-    .proficiency-container {
-        padding: 30px 20px;
-    }
-}
-
-/* 既存のskill-infoを元のシンプルな横並びに戻す調整 */
-.skill-info { 
-    padding: 24px; 
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.rating-text {
-    font-size: 0.75rem;
-    color: var(--text-sub);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
 }
 
 /* --- Slider UI --- */
@@ -458,7 +396,6 @@ section {
     width: 0;
     height: 0;
     border-style: solid;
-    transition: 0.2s;
 }
 
 .slider-nav.prev::before {
@@ -477,7 +414,7 @@ section {
     border-left-color: var(--user-orange);
 }
 
-/* --- Skills Section --- */
+/* --- Skills Grid --- */
 .skills-grid {
     display: flex;
     flex-wrap: wrap; 
@@ -487,7 +424,7 @@ section {
 
 .skill-card {
     flex: 1 1 320px;
-    max-width: 440px; /* 横幅拡張に合わせてカード最大幅を調整 */
+    max-width: 440px;
     cursor: pointer;
 }
 
@@ -528,7 +465,7 @@ section {
 
 .work-item {
     width: 100%;
-    max-width: 650px; /* 横幅拡張に合わせて調整 */
+    max-width: 650px;
     transition: 0.4s ease;
 }
 
@@ -554,7 +491,7 @@ section {
     line-height: 1.7;
 }
 
-/* --- Modal Layout (Large) --- */
+/* --- Modal Layout --- */
 .modal {
     position: fixed;
     top: 0;
@@ -586,7 +523,7 @@ section {
 .modal-container {
     position: relative;
     width: 95%;
-    max-width: 1200px; /* モーダルの横幅を拡大 */
+    max-width: 1200px;
     height: 85vh;
     background: var(--card-bg);
     border-radius: 12px;
@@ -600,12 +537,11 @@ section {
 
 .modal-flex-wrapper { 
     display: flex; 
-    height: auto; 
     min-height: 100%;
 }
 
 .modal-text-side {
-    flex: 0 0 450px; /* テキスト側の幅を固定 */
+    flex: 0 0 450px;
     padding: 60px 50px;
     background: var(--card-bg);
     border-right: 1px solid var(--border);
@@ -656,13 +592,6 @@ section {
 }
 
 /* --- Experienced --- */
-.exp-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-bottom: 40px;
-}
-
 .exp-row {
     display: grid;
     grid-template-columns: 100px 1fr 280px; 
@@ -699,26 +628,25 @@ section {
     letter-spacing: 0.5px;
 }
 
-/* --- Contact Section --- */
-#contact { 
-    padding: 0; 
-    max-width: 100%; 
+/* --- Contact Section (左右の隙間をなくす修正) --- */
+#contact {
+    padding: 0;           /* セクション自体の余白をゼロにする */
+    max-width: 100%;      /* 幅の制限を解除して全幅にする */
 }
 
 .contact-bg-container {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('img/contact-bg.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed; 
     width: 100%;
-    padding: 120px 0;
+    padding: 120px 0;    /* 背景の内側に上下の余白を作る */
     display: flex;
     align-items: center;
 }
 
 .contact-inner-wrapper {
-    max-width: var(--max-width);
+    max-width: var(--max-width); /* コンテンツの幅だけ制限する */
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -785,7 +713,7 @@ footer {
 .modal-container::-webkit-scrollbar { width: 6px; }
 .modal-container::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
 
-/* --- Responsive Layout (Mobile / Tablet) --- */
+/* --- Responsive Layout --- */
 @media (max-width: 900px) {
     .modal-flex-wrapper { flex-direction: column; }
     .modal-text-side { flex: 0 0 auto; border-right: none; border-bottom: 1px solid var(--border); padding: 50px 30px 30px; }
@@ -796,38 +724,23 @@ footer {
 
 @media (max-width: 768px) {
     header { padding: 12px 20px; }
-    section { padding: 80px 20px; }
+    /* 他のセクションは余白を維持 */
+    section:not(#contact) { padding: 80px 20px; }
     
-    .about-flex {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .info-list li {
-        margin: 0 auto 12px;
-        text-align: left;
-    }
+    .about-flex { flex-direction: column; text-align: center; }
+    .info-list li { margin: 0 auto 12px; text-align: left; }
 
-    #hero { 
-        background-attachment: scroll; 
-        text-align: center;
-    }
-    
+    #hero { background-attachment: scroll; text-align: center; }
     #hero .hero-subtext { padding-left: 0; }
     
-    .contact-bg-container { 
-        background-attachment: scroll; 
-        padding: 80px 20px; 
-    }
+    .contact-bg-container { background-attachment: scroll; padding: 80px 20px; }
     .social-links { justify-content: center; }
 
     .skills-grid { justify-content: center; }
     .skill-card { width: 100%; flex: 1 1 100%; }
 
-    .exp-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding: 20px 0;
-    }
+    .exp-row { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
     .exp-role { text-align: left; margin-top: 5px; }
+
+    .proficiency-grid { grid-template-columns: 1fr; }
 }
