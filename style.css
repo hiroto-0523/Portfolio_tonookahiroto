@@ -539,33 +539,71 @@ section {
 .exp-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding-left: 15px;
+    gap: 0; /* 行間の隙間は padding で調整 */
     padding-bottom: 40px;
 }
 
 .exp-row {
-    display: flex;
-    align-items: baseline;
-    gap: 40px;
+    display: grid;
+    /* 日付(100px) | タイトル(1fr) | 役割(250px) の3カラム構成 */
+    grid-template-columns: 100px 1fr 280px; 
+    align-items: center;
+    gap: 20px;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
+    padding: 15px 10px;
+    transition: background 0.3s ease;
+}
+
+.exp-row:hover {
+    background: rgba(255, 255, 255, 0.03); /* ホバー時に軽くハイライト */
 }
 
 .exp-date {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     color: var(--user-orange);
-    min-width: 80px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .exp-title {
     color: var(--text-main);
     font-size: 1rem;
     font-weight: 600;
+    line-height: 1.4;
 }
 
+.exp-role {
+    color: var(--user-orange);
+    font-size: 0.85rem;
+    text-align: right; /* ポジションは右寄せで見やすく */
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* スマホ・タブレット用のレスポンシブ設定 */
+@media (max-width: 768px) {
+    .exp-row {
+        grid-template-columns: 1fr; /* 1列に並べる */
+        gap: 8px;
+        padding: 20px 0;
+    }
+
+    .exp-date {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+
+    .exp-title {
+        font-size: 0.95rem;
+    }
+
+    .exp-role {
+        text-align: left; /* スマホでは左寄せ */
+        color: var(--user-orange); /* スマホで見落とされないよう少し色を強調 */
+        font-size: 0.8rem;
+        margin-top: 5px;
+    }
+}
 /* --- Contact Section --- */
 #contact { 
     padding: 0; 
