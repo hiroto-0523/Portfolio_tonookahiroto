@@ -200,8 +200,8 @@ section {
 }
 
 .profile-image {
-    flex: 0 0 240px;
-    height: 240px;
+    flex: 0 0 350px;
+    height: 350px;
     background: var(--bg-darker);
     border-radius: 4px;
     overflow: hidden;
@@ -344,7 +344,7 @@ section {
 .prof-stars {
     color: var(--user-orange);
     font-size: 1rem;
-    letter-spacing: 0.5px; /* 文字間隔を詰めて視認性を向上 */
+    letter-spacing: 0.5px;
 }
 
 .prof-bar-bg {
@@ -359,64 +359,6 @@ section {
     height: 100%;
     background: var(--btn-gradient);
     border-radius: 2px;
-}
-
-/* --- Slider UI --- */
-.slider-container {
-    cursor: default;
-}
-
-.slider-img {
-    transition: opacity 0.3s ease;
-}
-
-.slider-nav {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0;
-    transition: 0.3s;
-    background: rgba(0,0,0,0);
-    z-index: 5;
-}
-
-.slider-container:hover .slider-nav {
-    opacity: 1;
-}
-
-.slider-nav:hover {
-    background: rgba(0,0,0,0.3);
-}
-
-.slider-nav.prev { left: 0; }
-.slider-nav.next { right: 0; }
-
-.slider-nav::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-}
-
-.slider-nav.prev::before {
-    border-width: 8px 10px 8px 0;
-    border-color: transparent var(--text-main) transparent transparent;
-}
-
-.slider-nav.next::before {
-    border-width: 8px 0 8px 10px;
-    border-color: transparent transparent transparent var(--text-main);
-}
-
-.slider-nav:hover::before {
-    transform: scale(1.2);
-    border-right-color: var(--user-orange);
-    border-left-color: var(--user-orange);
 }
 
 /* --- Skills Grid --- */
@@ -462,17 +404,33 @@ section {
 
 /* --- Works Section --- */
 .works-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Skillsと同じ間隔に合わせる */
+    justify-content: center; /* これで中央に寄せる */
+    width: 100%;
 }
 
 .work-item {
+    /* 修正：1つ目の数字を 0 にします（勝手に広がらない設定） */
+    flex: 0 1 400px; 
+    
+    /* Skillsカードの最大幅（440px）に合わせるか、
+       広がりすぎないサイズに固定します */
+    max-width: 440px; 
+    
+    /* 以下は既存のスタイル */
     width: 100%;
-    max-width: 650px;
     transition: 0.4s ease;
     cursor: pointer;
+    background: var(--card-bg);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+#works {
+    padding-top: 0;
 }
 
 .work-item:hover {
