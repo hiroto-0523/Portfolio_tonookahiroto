@@ -96,7 +96,7 @@ nav ul li a:hover {
 
 /* --- Sections --- */
 section {
-    padding: 100px 0;
+    padding: 80px 0;
     width: 100%;
 }
 
@@ -349,7 +349,7 @@ section {
 
 .prof-bar-bg {
     width: 100%;
-    height: 4px;
+    height: 7px;
     background: #333;
     border-radius: 2px;
     overflow: hidden;
@@ -427,10 +427,6 @@ section {
     border-radius: 4px;
     border: 1px solid var(--border);
     overflow: hidden;
-}
-
-#works {
-    padding-top: 0;
 }
 
 .work-item:hover {
@@ -550,6 +546,23 @@ section {
     width: 100%;
     height: auto;
     border-radius: 4px;
+}
+
+/* モーダル内の説明文（pタグやdivタグ）の中にあるリンクを指定 */
+.modal-text-side p a, 
+.works-article-text a {
+    color: var(--user-orange);    /* 文字をオレンジにする */
+    text-decoration: none;         /* 下線を消す（好みで） */
+    font-weight: 700;              /* 太字にしてより目立たせる */
+    transition: 0.3s;
+}
+
+/* ホバーした時に少し光らせる、または下線を出す演出 */
+.modal-text-side p a:hover, 
+.works-article-text a:hover {
+    color: var(--accent-gold);     /* ホバーで少し色を変える */
+    text-decoration: underline;    /* ホバー時のみ下線を表示 */
+    opacity: 0.8;
 }
 
 /* --- Works Modal (Vertical Layout) --- */
