@@ -466,51 +466,61 @@
         });
 
 // --- Works Modal Logic ---
-        document.querySelectorAll('.clickable-work').forEach(card => {
-            card.addEventListener('click', () => {
-                const title = card.getAttribute('data-title');
-                const articles = JSON.parse(card.getAttribute('data-articles') || "[]");
-                
-                document.getElementById('modal-work-title').innerText = title;
-                
-                const bodyContainer = document.getElementById('modal-work-body');
-                bodyContainer.innerHTML = '';
-                
-                articles.forEach(item => {
-                    const section = document.createElement('div');
-                    section.className = 'works-article-section';
-                    
-                    if (item.video) {
-                        const videoElement = document.createElement('video');
-                        videoElement.src = item.video; // 動画ファイルのパスを指定
-                        videoElement.autoplay = true;   // 自動再生
-                        videoElement.muted = true;      // ミュート（自動再生に必須）
-                        videoElement.loop = true;       // ループ再生
-                        videoElement.playsInline = true; // スマホでのインライン再生
-                        videoElement.controls = true;   // 再生バーを表示
-                        
-                        videoElement.style.width = '100%';
-                        videoElement.style.borderRadius = '8px';
-                        videoElement.style.marginBottom = '25px';
-                        videoElement.style.background = '#000';
-
-                        section.appendChild(videoElement);
-                    }
-                    
-                    if (item.text) {
-                        const text = document.createElement('div');
-                        text.className = 'works-article-text';
-                        text.innerHTML = item.text.replace(/\n/g, '<br>');
-                        section.appendChild(text);
-                    }
-                    
-                    bodyContainer.appendChild(section);
-                });
-
-                document.querySelector('#modal-work .modal-container').scrollTop = 0;
-                openModal('modal-work');
-            });
+document.querySelectorAll('.clickable-work').forEach(card => {
+    card.addEventListener('click', () => {
+        const title = card.getAttribute('data-title');
+        const articles = JSON.parse(card.getAttribute('data-articles') || "[]");
+        
+        document.getElementById('modal-work-title').innerText = title;
+        
+        const bodyContainer = document.getElementById('modal-work-body');
+        bodyContainer.innerHTML = '';
+        
+        articles.forEach(item => {
+            const section = document.createElement('div');
+            section.className = 'works-article-section';
+            
+            // 【動画がある場合】
+            if (item.video) {
+                const videoElement = document.createElement('video');
+                videoElement.src = item.video;
+                videoElement.autoplay = true;
+                videoElement.muted = true;
+                videoElement.loop = true;
+                videoElement.playsInline = true;
+                videoElement.controls = true;
+                videoElement.style.width = '100%';
+                videoElement.style.borderRadius = '8px';
+                videoElement.style.marginBottom = '25px';
+                videoElement.style.background = '#000';
+                section.appendChild(videoElement);
+            } 
+            // 【画像がある場合】
+            else if (item.img) {
+                const img = document.createElement('img');
+                img.className = 'works-article-image'; // CSSでスタイルが定義されています
+                img.src = item.img;
+                img.style.width = '100%';
+                img.style.borderRadius = '8px';
+                img.style.marginBottom = '25px';
+                section.appendChild(img);
+            }
+            
+            // 【テキストがある場合】
+            if (item.text) {
+                const text = document.createElement('div');
+                text.className = 'works-article-text';
+                text.innerHTML = item.text.replace(/\n/g, '<br>');
+                section.appendChild(text);
+            }
+            
+            bodyContainer.appendChild(section);
         });
+
+        document.querySelector('#modal-work .modal-container').scrollTop = 0;
+        openModal('modal-work');
+    });
+});
     </script>
 </body>
 </html>
