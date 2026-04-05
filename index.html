@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div style="position: fixed; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none;">
+        <img src="img/contact-bg.jpg" alt="">
+        <img src="img/skill-obs-2.jpg" alt="">
+    </div>
 
     <header>
         <nav>
@@ -110,10 +114,13 @@
                     </div>
                 </div>
 
-                <div class="skills-grid">
+                <!-- <div class="skills-grid">
                     <div class="skill-card clickable-skill" 
                          data-title="vMix" 
-                         data-desc="vMixを用いた大規模イベントのライブ配信・スイッチングに対応。API連携や独自スクリプト、リプレイシステムを組み合わせた複雑な配信構成の構築を得意とします。"
+                         data-desc="vMixを用いた大規模イベントのライブ配信・スイッチングを行いました。<br>独自スクリプトやリプレイシステムを組み合わせた複雑な配信構成の構築を得意とします。
+                         <br><br>〇技術的な取り組み
+                         <br>1.Streamdeckを使ったワンボタンでのシーン切り替えを実現させ、スイッチングミスの防止と高度な表現の両立に挑戦しました。
+                         <br>2.API連携を使った"
                          data-images='["img/skill-vmix-1.png", "img/skill-vmix-2.jpg"]'
                          data-youtube='[]'>
                         <div class="skill-img-container">
@@ -123,9 +130,9 @@
                             <div class="skill-icon">01</div>
                             <h3>vMix</h3>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="skill-card clickable-skill" 
+                    <!-- <div class="skill-card clickable-skill" 
                          data-title="OBS/Encoder" 
                          data-desc='OBSをはじめとした各種エンコーダーの最適化。RTMP/SRTなどのプロトコル選択から、ネットワーク帯域に応じたビットレート管理まで、安定した送出環境を実現します。
                          <br><br>【実績例】
@@ -142,9 +149,9 @@
                             <div class="skill-icon">02</div>
                             <h3>OBS/Encoder</h3>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="skill-card clickable-skill" 
+                    <!-- <div class="skill-card clickable-skill" 
                          data-title="Google Workspace" 
                          data-desc="ここにスキルの詳細説明を入力してください。"
                          data-images='[]'
@@ -156,9 +163,9 @@
                             <div class="skill-icon">03</div>
                             <h3>Google Workspace</h3>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="skill-card clickable-skill" 
+                    <!-- <div class="skill-card clickable-skill" 
                          data-title="スライドデザイン、動画編集" 
                          data-desc="ここにスキルの詳細説明を入力してください。"
                          data-images='[]'
@@ -170,9 +177,9 @@
                             <div class="skill-icon">04</div>
                             <h3>スライドデザイン、動画編集</h3>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="skill-card clickable-skill" 
+                    <!-- <div class="skill-card clickable-skill" 
                          data-title="リーダーシップ" 
                          data-desc="テクニカルディレクター（TD）および制作ディレクターとして、イベントの進行表作成から現場のディレクションまで一貫して担当。トラブルを未然に防ぐリスク管理を重視しています。"
                          data-images='["img/skill-event-1.png", "img/skill-event-2.png"]'
@@ -184,7 +191,7 @@
                             <div class="skill-icon">05</div>
                             <h3>リーダーシップ</h3>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -193,11 +200,28 @@
             <div class="section-inner">
                 <h2 class="section-title" data-subtitle="具体的な制作物">Works</h2>
                 <div class="works-container">
-                    <div class="work-item clickable-work reveal-left"
-                         data-title="vMix"
-                         data-articles='[{"img": "img/placeholder-work.jpg", "video": "video/2026-04-02 23-34-02.mp4","text": "vMixを使用したスイッチングおよび配信構成の最適化。"}]'>
+                <div class="work-item clickable-work reveal-left"
+                     data-title="vMix"
+                     data-articles='[
+                        {
+                            "img": "img/skill-vmix-1.png", 
+                            "text": "vMixを用いた大規模イベントのライブ配信・スイッチングを行いました。<br>独自スクリプトやリプレイシステムを組み合わせた複雑な配信構成の構築を得意とします。"
+                        },
+                        {
+                            "img": "img/skill-vmix-2.jpg", 
+                            "text": "<span class=\"text-orange\">1.</span>Streamdeckを使ったワンボタンでのシーン切り替えを実現させ、スイッチングミスの防止と高度な表現の両立に挑戦しました。"
+                        },
+                        {
+                            "img": "img/Uracy.png", 
+                            "text": "<span class=\"text-orange\">2.</span>PCにDecklinkを組み込み、vMixをハードウェアスイッチャー兼ミキサーとして活用するシステムを構築しました。<br>この現場では技術ディレクターとして技術統括を行いながら、メインオペレーションも行いました。<br><span class=\"text-orange\"><a href=\"https://papanews.info/uracyspring2026/\" target=\"_blank\">Uracy Spring2026</a></span>"
+                        },
+                        {
+                            "img": "img/work-lol-1.png", 
+                            "text": "<span class=\"text-orange\">3.</span>LoLのBan/Pickを視覚的に分かりやすく伝えるため、APIを使ったシステムを構築しました。"
+                        }
+                    ]'>
                         <div class="work-thumb">
-                            <img src="img/placeholder-work.jpg" alt="vMix">
+                            <img src="img/skill-vmix-1.png" alt="vMix">
                         </div>
                         <div class="work-info">
                             <h3>【vMix】<br>スイッチングオペレーター</h3>
@@ -206,13 +230,32 @@
                         </div>
                     </div>
 
-                    <div class="work-item clickable-work reveal-right"
-                         data-title="配信環境作成"
-                         data-articles='[
-                            {"img": "img/placeholder-work.jpg", "text": "ここに制作物の詳細な解説テキストを入力してください。"}
-                         ]'>
+                        <div class="work-item clickable-work reveal-right"
+                            data-title="配信環境作成"
+                            data-articles='[
+                                {
+                                    "img": "img/Encorder.png", 
+                                    "text": "OBSをはじめとした各種エンコーダーの最適化。RTMP/SRTなどのプロトコル選択から、ネットワーク帯域に応じたビットレート管理まで、安定した送出環境を実現します。<br>下記に配信環境の構築に携わった主要なプロジェクトをご紹介します。"
+                                },
+                                {
+                                    "img": "img/skill-obs-3.jpg", 
+                                    "text": "・nobi tube 様<br><a href=\"https://www.youtube.com/watch?v=loQjZg0XUso\" target=\"_blank\">【#鉄拳8】#ノビセン『Road to EVO Japan 2026』</a>"
+                                },
+                                {
+                                    "img": "img/skill-obs-4.jpg", 
+                                    "text": "・tekkenchannel 様<br><a href=\"https://www.youtube.com/live/kEsMI2nF_1E?si=BQ7IPnAXMf0m2fSp\" target=\"_blank\">プロライセンス選手大集合！2026年展望トーク＆エキシビジョンマッチ</a>"
+                                },
+                                {
+                                    "img": "img/skill-obs-5.jpg", 
+                                    "text": "・tekkenchannel 様<br><a href=\"https://www.youtube.com/live/FCha_ATC3h0?si=E4exjnAvzkl1Aj00\" target=\"_blank\">【#TWT2025/公式日本語配信】Global Finals / DAY4 (ファイナル / TOP8)</a>"
+                                },
+                                {
+                                    "img": "img/skill-obs-6.jpg", 
+                                    "text": "・arcsystemworks 様<br><a href=\"https://www.youtube.com/live/uoUwohW68O0?si=6dcZVye_FzYZGL3Y\" target=\"_blank\">【#AWT25_26】『ARC WORLD TOUR 2025-2026 FINALS』Day1 FIRST STAGE GGST部門 公式日本語配信</a>"
+                                }
+                            ]'>
                         <div class="work-thumb">
-                            <img src="img/placeholder-work.jpg" alt="OBS/Encoder">
+                            <img src="img/Encorder.png" alt="OBS/Encoder">
                         </div>
                         <div class="work-info">
                             <h3>【OBS/Encoder】<br>配信環境作成</h3>
@@ -491,7 +534,7 @@ document.querySelectorAll('.clickable-work').forEach(card => {
                 videoElement.controls = true;
                 videoElement.style.width = '100%';
                 videoElement.style.borderRadius = '8px';
-                videoElement.style.marginBottom = '25px';
+                videoElement.style.marginBottom = '8px';
                 videoElement.style.background = '#000';
                 section.appendChild(videoElement);
             } 
@@ -502,7 +545,7 @@ document.querySelectorAll('.clickable-work').forEach(card => {
                 img.src = item.img;
                 img.style.width = '100%';
                 img.style.borderRadius = '8px';
-                img.style.marginBottom = '25px';
+                img.style.marginBottom = '8px';
                 section.appendChild(img);
             }
             
