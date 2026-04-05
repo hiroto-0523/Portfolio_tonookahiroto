@@ -195,9 +195,7 @@
                 <div class="works-container">
                     <div class="work-item clickable-work reveal-left"
                          data-title="vMix"
-                         data-articles='[
-                            {"img": "img/placeholder-work.jpg", "text": "ここに制作物の詳細な解説テキストを入力してください。"}
-                         ]'>
+                         data-articles='[{"img": "img/placeholder-work.jpg", "video": "video/2026-04-02 23-34-02.mp4","text": "vMixを使用したスイッチングおよび配信構成の最適化。"}]'>
                         <div class="work-thumb">
                             <img src="img/placeholder-work.jpg" alt="vMix">
                         </div>
@@ -467,7 +465,7 @@
             });
         });
 
-        // --- Works Modal Logic ---
+// --- Works Modal Logic ---
         document.querySelectorAll('.clickable-work').forEach(card => {
             card.addEventListener('click', () => {
                 const title = card.getAttribute('data-title');
@@ -482,16 +480,30 @@
                     const section = document.createElement('div');
                     section.className = 'works-article-section';
                     
-                    const img = document.createElement('img');
-                    img.className = 'works-article-image';
-                    img.src = item.img;
+                    if (item.video) {
+                        const videoElement = document.createElement('video');
+                        videoElement.src = item.video; // 動画ファイルのパスを指定
+                        videoElement.autoplay = true;   // 自動再生
+                        videoElement.muted = true;      // ミュート（自動再生に必須）
+                        videoElement.loop = true;       // ループ再生
+                        videoElement.playsInline = true; // スマホでのインライン再生
+                        videoElement.controls = true;   // 再生バーを表示
+                        
+                        videoElement.style.width = '100%';
+                        videoElement.style.borderRadius = '8px';
+                        videoElement.style.marginBottom = '25px';
+                        videoElement.style.background = '#000';
+
+                        section.appendChild(videoElement);
+                    }
                     
-                    const text = document.createElement('div');
-                    text.className = 'works-article-text';
-                    text.innerText = item.text;
+                    if (item.text) {
+                        const text = document.createElement('div');
+                        text.className = 'works-article-text';
+                        text.innerHTML = item.text.replace(/\n/g, '<br>');
+                        section.appendChild(text);
+                    }
                     
-                    section.appendChild(img);
-                    section.appendChild(text);
                     bodyContainer.appendChild(section);
                 });
 
