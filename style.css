@@ -522,12 +522,11 @@ section {
 .modal-text-side h2 {
     font-size: 1.5rem;
     font-weight: 800;
-    margin-bottom: 12px;
     color: var(--user-orange);
 }
 
 .modal-divider {
-    width: 40px;
+    /* width: 40px; */
     height: 4px;
     background: var(--btn-gradient);
     margin-bottom: 30px;
@@ -579,7 +578,6 @@ section {
 
 .works-modal-header h2 {
     font-size: 2rem;
-    margin-bottom: 15px;
     color: var(--user-orange);
 }
 
