@@ -403,6 +403,10 @@ section {
 }
 
 /* --- Works Section --- */
+#works {
+    padding-top: 0 !important;
+}
+
 .works-container {
     display: flex;
     flex-wrap: wrap;
@@ -582,7 +586,7 @@ section {
 }
 
 .works-article-section {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .works-article-section iframe {
@@ -593,7 +597,6 @@ section {
 .works-article-image {
     width: 100%;
     border-radius: 8px;
-    margin-bottom: 25px;
     border: 1px solid var(--border);
 }
 
@@ -604,6 +607,16 @@ section {
     background: rgba(255,255,255,0.03);
     padding: 25px;
     border-left: 3px solid var(--user-orange);
+}
+
+.text-orange {
+    color: var(--user-orange);
+    font-weight: 700; /* 強調したい場合は太字に */
+}
+
+.text-red {
+    color: var(--accent-red);
+    font-weight: 700;
 }
 
 /* --- Experienced --- */
@@ -645,16 +658,41 @@ section {
 
 /* --- Contact Section --- */
 #contact {
-    padding: 0;
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    z-index: 1;
 }
 
-.contact-bg-container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('img/contact-bg.png');
+#contact::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; 
-    width: 100%;
-    padding: 120px 0;
+    z-index: -1;
+    
+    /* 1枚目も2枚目も同じ暗さに統一 */
+    filter: brightness(0.5); 
+    
+    /* アニメーション */
+    animation: contactSlideshowDirect 30s infinite ease-in-out;
+}
+
+@keyframes contactSlideshowDirect {
+    /* 0%から35%まで1枚目をじっくり表示 */
+    0%, 35% { 
+        background-image: url('img/contact-bg.jpg');
+    }
+    /* 35%から65%の間で、背景画像がじわ〜っと入れ替わる */
+    40%, 95% { 
+        background-image: url('img/skill-obs-2.jpg');
+    }
+    /* 85%から100%の間で、また1枚目に戻る */
+    100% { 
+        background-image: url('img/contact-bg.jpg');
+    }
 }
 
 .contact-content p {
