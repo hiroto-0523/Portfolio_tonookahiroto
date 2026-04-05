@@ -585,6 +585,11 @@ section {
     margin-bottom: 60px;
 }
 
+.works-article-section iframe {
+    border: 1px solid var(--border);
+    background: #000;
+}
+
 .works-article-image {
     width: 100%;
     border-radius: 8px;
