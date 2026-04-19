@@ -49,7 +49,7 @@
                         <p class="name-en">Hiroto Tonooka</p>
                         <ul class="info-list">
                             <li><strong>From</strong>:　茨城県下妻市</li>
-                            <li><strong>Age</strong>:　20 (2005.05.23)</li>
+                            <li><strong>Age</strong>:　<span id="age-display"></span> (2005.05.23)</li>
                             <li><strong>Status</strong>:　専門学生</li>
                         </ul>
                     </div>
@@ -564,6 +564,15 @@ document.querySelectorAll('.clickable-work').forEach(card => {
         openModal('modal-work');
     });
 });
+
+// --- 自動年齢計算 ---
+const birthDate = new Date('2005-05-23');
+const today = new Date();
+let age = today.getFullYear() - birthDate.getFullYear();
+const monthDiff = today.getMonth() - birthDate.getMonth();
+if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) { age--; }
+document.getElementById('age-display').innerText = age;
+
     </script>
 </body>
 </html>
