@@ -254,7 +254,7 @@ section {
     position: relative; 
     background: var(--card-bg);
     padding: 40px; 
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
@@ -604,7 +604,7 @@ section {
     font-size: 1rem;
     line-height: 1.8;
     color: var(--text-main);
-    background: rgba(255,255,255,0.03);
+    background: rgb(53, 53, 53);
     padding: 25px;
     border-left: 3px solid var(--user-orange);
 }
